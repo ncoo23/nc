@@ -1,0 +1,2 @@
+# nc
+for life
