@@ -1,2 +1,2 @@
 # nc
-for life
+first time 
