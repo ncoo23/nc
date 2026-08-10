@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProfilNco - Portfolio</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              purple: '#6C5CE7',
+              coral: '#FF7675',
+              teal: '#00CEC9',
+              yellow: '#FFEAA7',
+              dark: '#2D3436',
+              bg: '#FAF9F6'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Style indikator navigasi aktif */
+    .nav-link.active {
+      background-color: #6C5CE7;
+      color: #ffffff !important;
+      font-weight: 600;
+    }
+
+    /* Animasi Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-dark font-sans antialiased selection:bg-brand-purple selection:text-white overflow-x-hidden">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-bg/60 backdrop-blur-md border-b border-gray-200/40" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 py-3.5 flex justify-between items-center">
+      <a href="#home" class="font-serif text-2xl font-bold italic tracking-wide text-brand-purple">
+        Profil<span class="text-brand-coral">Nco.</span>
+      </a>
+
+      <div class="hidden md:flex space-x-2 text-sm font-medium bg-white/80 p-1.5 rounded-full border border-gray-200/80 shadow-sm" id="nav-menu">
+        <a href="#home" class="nav-link text-gray-700 hover:text-brand-purple px-4 py-2 rounded-full transition duration-200">Home</a>
+        <a href="#tentang" class="nav-link text-gray-700 hover:text-brand-purple px-4 py-2 rounded-full transition duration-200">Tentang Saya</a>
+        <a href="#proyek" class="nav-link text-gray-700 hover:text-brand-purple px-4 py-2 rounded-full transition duration-200">Proyek</a>
+        <a href="#connect" class="nav-link text-gray-700 hover:text-brand-purple px-4 py-2 rounded-full transition duration-200">Let's Connect</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-brand-purple focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200 px-6 py-4 space-y-2 text-base font-medium shadow-xl">
+      <a href="#home" class="block hover:text-brand-purple px-3 py-2 rounded-lg transition mobile-link">Home</a>
+      <a href="#tentang" class="block hover:text-brand-purple px-3 py-2 rounded-lg transition mobile-link">Tentang Saya</a>
+      <a href="#proyek" class="block hover:text-brand-purple px-3 py-2 rounded-lg transition mobile-link">Proyek</a>
+      <a href="#connect" class="block hover:text-brand-purple px-3 py-2 rounded-lg transition mobile-link">Let's Connect</a>
+    </div>
+  </nav>
+
+  <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-12 gap-8 items-center w-full">
+      <div class="md:col-span-7 space-y-6 reveal">
+        <span class="inline-block bg-brand-yellow/80 text-amber-900 font-semibold px-4 py-1.5 rounded-full text-sm border border-amber-300 shadow-sm">
+          ✨ Selamat Datang di Portofolio Saya
+        </span>
+        <h1 class="font-serif text-3xl md:text-5xl font-bold leading-tight text-gray-900">
+          Student interested in <span class="italic font-normal text-brand-purple">Finance, Economics & Digital Projects.</span>
+        </h1>
+        <p class="text-base md:text-lg text-gray-600 leading-relaxed font-sans">
+          I’m currently exploring financial markets, economics, problem solving, and digital creation while building my skills through personal projects.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#proyek" class="bg-brand-dark text-white px-7 py-3 rounded-xl text-base font-medium hover:bg-gray-800 transition shadow-md active:scale-95">
+            Lihat Proyek
+          </a>
+          <a href="#connect" class="border border-brand-purple text-brand-purple px-7 py-3 rounded-xl text-base font-medium hover:bg-brand-purple hover:text-white transition active:scale-95">
+            Let's Connect
+          </a>
+        </div>
+      </div>
+      
+      <div class="md:col-span-5 flex justify-center reveal">
+        <div class="bg-white p-5 rounded-3xl shadow-xl border border-gray-100 text-center max-w-xs w-full relative">
+          <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-teal/20 rounded-full blur-xl -z-10"></div>
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-coral/20 rounded-full blur-xl -z-10"></div>
+
+          <div class="w-full aspect-[4/5] mx-auto rounded-2xl overflow-hidden p-1.5 bg-gradient-to-tr from-brand-purple via-brand-coral to-brand-yellow shadow-inner">
+            <img src="WhatsApp Image 2026-08-06 at 20.08.27 (1).jpeg" 
+                 alt="Foto Profil" 
+                 class="w-full h-full object-cover rounded-xl">
+          </div>
+
+          <div class="mt-4">
+            <h3 class="font-serif text-xl font-bold text-gray-900">Nama Anda</h3>
+            <p class="text-sm text-brand-purple font-medium mt-1">Vocational High School Student</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentang" class="min-h-screen flex items-center justify-center py-20 bg-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 w-full">
+      <div class="grid md:grid-cols-12 gap-10 items-center">
+        <div class="md:col-span-7 space-y-5 reveal">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold">
+            Tentang <span class="text-brand-purple italic">Saya</span>
+          </h2>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+            I'm a vocational high school student with a strong interest in finance, economics, and technology. I enjoy learning how markets work, analyzing problems, and turning ideas into practical projects.
+          </p>
+        </div>
+
+        <div class="md:col-span-5 bg-brand-bg p-8 rounded-3xl border border-gray-200/80 shadow-sm reveal">
+          <h3 class="font-serif text-2xl font-bold mb-4 text-brand-purple">Currently learning</h3>
+          <ul class="space-y-3 text-base font-medium text-gray-700">
+            <li class="flex items-center gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-coral"></span>
+              Financial markets
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-teal"></span>
+              Economics
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-yellow"></span>
+              Investment
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-purple"></span>
+              Web development
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+              Problem solving
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+              Visual communication
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyek" class="min-h-screen flex items-center justify-center py-20 bg-brand-bg border-y border-gray-200/60">
+    <div class="max-w-6xl mx-auto px-6 w-full">
+      <div class="text-center max-w-3xl mx-auto mb-10 reveal">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold mb-3">
+          Galeri Proyek <span class="text-brand-coral italic">Yang Sedang Berjalan</span>
+        </h2>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Proyek ini di kembangkan dengan kedisiplinan dan konsistensi agar bisa membuahkan hasil yang manis serta menjadikan proyek ini sebagai pengalaman muda.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6" id="portfolio-grid">
+        
+        <div onclick="openModal('Personal Investment Research', 'Investasi & Pasar Finansial', 'Riset mendalam mengenai tren pergerakan harga Bitcoin, strategi Dollar Cost Averaging (DCA), serta analisa pola teknikal pasar crypto untuk perencanaan investasi masa depan.', 'detail-img-proyek-1', '')" 
+             class="portfolio-item group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200/60 flex flex-col cursor-pointer reveal">
+          <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+            <img src="BTCUSD_2026-08-10_20-07-44.png" 
+                 alt="Personal Investment Research Image" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-serif text-xl font-bold group-hover:text-brand-purple transition">Personal Investment Research</h3>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">Analisis teknikal pasar kripto dan strategi investasi akumulasi jangka panjang.</p>
+            </div>
+
+            <div class="hidden">
+              <img id="detail-img-proyek-1" src="BTCUSD_2026-08-10_20-07-44.png" alt="Gambar Detail Proyek 1">
+            </div>
+
+            <span class="font-serif italic text-brand-purple font-semibold group-hover:underline flex items-center gap-1 text-sm text-left pt-2">
+              Lihat Detail Proyek &rarr;
+            </span>
+          </div>
+        </div>
+
+        <div onclick="openModal('Economic Research & Content', 'Komunikasi Visual & Ekonomi', 'Pembuatan materi media digital yang membahas topik-topik ekonomi makro/mikro secara sederhana, informatif, dan komunikatif bagi generasi muda.', 'detail-img-proyek-2', 'https://www.instagram.com/economa.id?igsh=MTUyeDVibG5lbzBpMg%3D%3D')" 
+             class="portfolio-item group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200/60 flex flex-col cursor-pointer reveal">
+          <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+            <img src="321.png" 
+                 alt="Economic Research & Content Image" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-serif text-xl font-bold group-hover:text-brand-teal transition">Economic Research & Content</h3>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">Edukasi dan penyajian analisis ekonomi dasar dalam bentuk materi visual menarik.</p>
+            </div>
+
+            <div class="hidden">
+              <img id="detail-img-proyek-2" src="321.png" alt="Gambar Detail Proyek 2">
+            </div>
+
+            <span class="font-serif italic text-brand-teal font-semibold group-hover:underline flex items-center gap-1 text-sm text-left pt-2">
+              Lihat Detail Proyek &rarr;
+            </span>
+          </div>
+        </div>
+
+        <div onclick="openModal('Building Assets', 'Pengembangan Aset Digital', 'Membangun kebiasaan menabung aset dari sejak dini agar bisa mengelola keuangan dengan bijak dan menjadi kan aset ini suatu bantalan financial.', 'detail-img-proyek-3', '')" 
+             class="portfolio-item group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200/60 flex flex-col cursor-pointer reveal">
+          <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center">
+            <img src="1122.png" 
+                 alt="Building Assets Image" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="font-serif text-xl font-bold group-hover:text-brand-coral transition">Building Assets</h3>
+              <p class="text-gray-600 text-sm mt-2 leading-relaxed">1 Builiding Asets yang mungkin berpengaruh kedepan nya.</p>
+            </div>
+
+            <div class="hidden">
+              <img id="detail-img-proyek-3" src="btc.png" alt="Gambar Detail Proyek 3">
+            </div>
+
+            <span class="font-serif italic text-brand-coral font-semibold group-hover:underline flex items-center gap-1 text-sm text-left pt-2">
+              Lihat Detail Proyek &rarr;
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="connect" class="min-h-screen flex flex-col items-center justify-between py-20 px-6 bg-white">
+    <div class="my-auto max-w-4xl mx-auto text-center space-y-6 reveal">
+      <span class="inline-block bg-brand-purple/10 text-brand-purple font-semibold px-4 py-1.5 rounded-full text-sm">
+        Collaboration & Networking
+      </span>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900">
+        Let's Connect
+      </h2>
+      <div class="space-y-4 text-gray-600 text-lg md:text-xl max-w-2xl mx-auto font-sans leading-relaxed">
+        <p class="font-semibold text-brand-purple">Still learning. Still building. Still growing.</p>
+        <p>
+          I'm always open to new opportunities, collaborations, and conversations that can help me learn, create, and grow.
+        </p>
+        <p class="italic font-serif text-gray-800 text-2xl pt-2">
+          "Let's build something meaningful."
+        </p>
+      </div>
+    </div>
+
+    <div class="w-full max-w-6xl mx-auto pt-10 border-t border-gray-100 text-xs text-gray-500 flex justify-between items-center flex-col sm:flex-row gap-4 reveal">
+      <p>© 2026 ProfilNco. All Rights Reserved.</p>
+      
+      <div class="flex space-x-3 bg-gray-50 p-1.5 rounded-xl border border-gray-200/80 shadow-xs">
+        <a href="https://github.com/ncoo23/nc" target="_blank" class="px-3 py-1.5 bg-white rounded-lg border border-gray-200 hover:border-brand-purple text-gray-700 hover:text-brand-purple transition font-medium shadow-xs text-xs flex items-center gap-1">
+          GitHub
+        </a>
+        <a href="https://www.instagram.com/n_cooo?igsh=MWRlcHA1OGlnanhweg==" target="_blank" class="px-3 py-1.5 bg-white rounded-lg border border-gray-200 hover:border-brand-purple text-gray-700 hover:text-brand-purple transition font-medium shadow-xs text-xs flex items-center gap-1">
+          Instagram (n_cooo)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="project-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 relative shadow-2xl transition-all">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold focus:outline-none">&times;</button>
+      
+      <span id="modal-badge" class="inline-block bg-purple-100 text-brand-purple text-xs font-semibold px-3 py-1 rounded-full mb-3">Kategori</span>
+      
+      <h3 id="modal-title" class="font-serif text-2xl font-bold text-gray-900 mb-3">Judul Proyek</h3>
+      
+      <div class="w-full h-56 rounded-xl overflow-hidden mb-4 bg-gray-100 border border-gray-200">
+        <img id="modal-image" src="" alt="Detail Proyek" class="w-full h-full object-contain bg-slate-900">
+      </div>
+
+      <p id="modal-desc" class="text-gray-600 text-sm leading-relaxed mb-5">Penjelasan rincian proyek.</p>
+      
+      <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+        <a id="modal-link" href="#" target="_blank" class="hidden text-brand-purple font-semibold text-sm hover:underline flex items-center gap-1">
+          Kunjungi Akun / Content &rarr;
+        </a>
+        <button onclick="closeModal()" class="px-5 py-2 rounded-xl border border-gray-300 text-gray-600 text-sm font-medium hover:bg-gray-100 transition ml-auto">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // 2. Modal Popup Detail Proyek
+    const modal = document.getElementById('project-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBadge = document.getElementById('modal-badge');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalImage = document.getElementById('modal-image');
+    const modalLink = document.getElementById('modal-link');
+
+    function openModal(title, category, description, detailImageElementId, externalUrl) {
+      modalTitle.textContent = title;
+      modalBadge.textContent = category;
+      modalDesc.textContent = description;
+
+      const detailImgElement = document.getElementById(detailImageElementId);
+      if (detailImgElement) {
+        modalImage.src = detailImgElement.src;
+      }
+
+      if(externalUrl) {
+        modalLink.href = externalUrl;
+        modalLink.classList.remove('hidden');
+      } else {
+        modalLink.classList.add('hidden');
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // 3. ScrollSpy Navigasi Aktif
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // 4. Animasi Scroll Reveal
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>
